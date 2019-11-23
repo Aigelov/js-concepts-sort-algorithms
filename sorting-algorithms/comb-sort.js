@@ -1,19 +1,4 @@
-let arr = [
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1,
-  92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1
-];
+const arr = require('./generate-random-numbers').randomNumbers;
 let counter = 0;
 let delta = Math.ceil(arr.length / 2);
 
@@ -34,11 +19,25 @@ const sortArr = (arr) => {
     }
 
     if (isSorted) {
+      isSorted = isSortedFn(arr);
+    }
+
+    if (isSorted) {
       stopIteration = false;
     }
   }
 };
+const isSortedFn = (arr) => {
+  let isSorted = true;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      isSorted = false;
+      break;
+    }
+  }
+  return isSorted;
+};
 console.log(`Array length: ${arr.length}`);
 sortArr(arr);
 console.log(arr);
-console.log(`${counter} iterations`);
+console.log(`${counter} iterations`); // 247

@@ -1,7 +1,7 @@
 const arr = require('./generate-random-numbers').randomNumbers;
 let counter = 0;
 
-const sortArr = (arr) => {
+const insertionSort = (arr) => {
   let stopIteration = true;
   while (stopIteration) {
     let isSorted = true;
@@ -17,7 +17,7 @@ const sortArr = (arr) => {
     }
   }
 };
-sortArr(arr);
+insertionSort(arr);
 console.log(`Array length: ${arr.length}`);
 console.log(arr);
 console.log(`${counter} iterations`);

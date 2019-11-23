@@ -1,45 +1,44 @@
-// let arr = [
-//   92, 16, 27, 67, 56, 10, 52, 33, 44, 23, 8, 9, 1
-// ];
-let arr = [
-  16, 27, 67, 56, 10, 52, 33
-];
+const items = require('./generate-random-numbers').randomNumbers;
 let counter = 0;
-let middle = Math.floor(arr.length / 2);
-console.log(middle);
 
-const sortArr = (arr) => {
-  let stopIteration = true;
-  while (stopIteration) {
-    let i;
-    let j;
-    let isSorted = true;
-    for (i = 0; i < arr.length - middle; i++) {
+partition = (items, left, right) => {
+  let pivot = items[Math.floor((right + left) / 2)]; //middle element
+  let i = left; //left pointer
+  let j = right; //right pointer
+
+  while (i <= j) {
+    while (items[i] < pivot) {
       counter++;
-      if (arr[i] > arr[middle]) {
-        break;
-      }
+      i++;
     }
-
-    for (j = arr.length - 1; j >= middle; j--) {
+    while (items[j] > pivot) {
       counter++;
-      if (arr[j] < arr[middle]) {
-        break;
-      }
+      j--;
     }
-
-    if (i !== j) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-      isSorted = false;
-    }
-    console.log(i, j);
-
-    if (counter > 4) {
-      stopIteration = false;
+    if (i <= j) {
+      [items[i], items[j]] = [items[j], items[i]];
+      i++;
+      j--;
     }
   }
+  return i;
 };
-console.log(`Array length: ${arr.length}`);
-sortArr(arr);
-console.log(arr);
+
+quickSort = (items, left, right) => {
+  let index;
+  if (items.length > 1) {
+    index = partition(items, left, right); //index returned from partition
+    if (left < index - 1) { //more elements on the left side of the pivot
+      quickSort(items, left, index - 1);
+    }
+    if (index < right) { //more elements on the right side of the pivot
+      quickSort(items, index, right);
+    }
+  }
+  return items;
+};
+
+// first call to quick sort
+let sortedArray = quickSort(items, 0, items.length - 1);
+console.log(sortedArray);
 console.log(`${counter} iterations`);
