@@ -35,6 +35,7 @@
 // console.log('1' + 2); // string 12
 // console.log('' + 1 + 0); // string 10
 // console.log('' - 1); // number -1
+// console.log('' - 1 + 5); // number 4
 // console.log('3' * 8); // number 24
 // console.log('3' * '8'); // number 24
 // console.log(4 + 10 + 'px'); // string 14px
@@ -56,17 +57,15 @@
 // console.log(0 == 0); // true
 
 // console.log();
-// console.log(Boolean(false), Boolean(''), false == ''); // true
-// console.log(Boolean(false), Boolean([]), false == []); // true
-// console.log(Boolean(false), Boolean({}), false == {}); // false
+// console.log(Boolean(false), Boolean(''), false == ''); // false false true
+// console.log(Boolean(false), Boolean([]), false == []); // false true true
+// console.log(Boolean(false), Boolean({}), false == {}); // false true false
 // console.log();
-// console.log(Boolean(''), Boolean(0), '' == 0); // true
-// console.log(Boolean(''), Boolean([]), '' == []); // true
-// console.log(Boolean(''), Boolean({}), '' == {}); // false
+// console.log(Boolean(''), Boolean(0), '' == 0); // false false true
+// console.log(Boolean(''), Boolean([]), '' == []); // false true true
+// console.log(Boolean(''), Boolean({}), '' == {}); // false true false
 // console.log();
-// console.log(Boolean(0), Boolean([]), 0 == []); // true
-// console.log(Boolean('0'), Boolean([]), '0' == []); // false
-// console.log(Boolean(0), Boolean({}), 0 == {}); // false
-// console.log(Boolean(0), Boolean(null), 0 == null); // false
-
-/**   */
+console.log(Boolean(0), Boolean([]), 0 == []); // false true true
+console.log(Boolean('0'), Boolean([]), '0' == []); // true true false
+console.log(Boolean(0), Boolean({}), 0 == {}); // false true false
+console.log(Boolean(0), Boolean(null), 0 == null); // false false false
