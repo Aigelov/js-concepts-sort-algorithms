@@ -13,6 +13,7 @@
 // person.knows.apply(john, ['не все', 'John']);
 // person.knows.bind(john, 'не все', 'John')();
 
+
 // function Person(surname) {
 //   this.surname = surname;
 //   console.log(this);
@@ -27,6 +28,7 @@
 // stark.knows('everything', 'Tony');
 // stark.needs('Iron Man');
 
+
 // function Person(name, age) {
 //   this.name = name;
 //   this.age = age;
@@ -34,12 +36,14 @@
 // }
 // const elena = new Person('Elena', 20);
 
+
 /** Explicit context - Явная передача контекста */
 // function logThis() {
 //   console.log(this);
 // }
 // const obj = {num: 42};
 // logThis.apply(obj);
+
 
 /** Implicit context - Неявная перечада контекста */
 // const animal = {
@@ -50,12 +54,12 @@
 // };
 // animal.logThis();
 
-function Cat(color) {
-  this.color = color;
-  console.log('This', this);
-  (() => {
-    console.log('Arrow this', this)
-  })()
-}
 
-new Cat('red');
+// function Cat(color) {
+//   this.color = color;
+//   console.log('This', this);
+//   (() => {
+//     console.log('Arrow this', this)
+//   })()
+// }
+// new Cat('red');

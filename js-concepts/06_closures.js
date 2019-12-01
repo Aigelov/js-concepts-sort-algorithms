@@ -13,6 +13,7 @@
 // helloToElena();
 // helloToJohn();
 
+
 // function createFrameworkManager() {
 //   const fw = ['Angular', 'React'];
 //   return {
@@ -29,15 +30,17 @@
 // manager.add('VueJS');
 // manager.print();
 
+
 // setTimeout
 // const fib = [1, 2, 3, 5, 8, 13];
-// for (var i = 0; i < fib.length; i++) {
+// for (let i = 0; i < fib.length; i++) {
 //   ((j) => {
 //     setTimeout(() => {
 //       console.log(`Fib: ${j} = ${fib[j]}`);
 //     }, 500);
 //   })(i)
 // }
+
 
 // setTimeout and delay
 const fib = [1, 2, 3, 5, 8, 13];
