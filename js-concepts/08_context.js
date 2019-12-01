@@ -63,3 +63,33 @@
 //   })()
 // }
 // new Cat('red');
+
+
+// const book1 = {
+//   title: 'Book one',
+//   author: 'John Doe',
+//   year: 2019,
+//   getSummary1: function() {
+//     return this.title;
+//   },
+//   getSummary2: () => {
+//     return this;
+//   },
+//   getSummary3: function() {
+//     let getThis = function() {
+//       return this;
+//     };
+//     return getThis();
+//   },
+//   getSummary4: function() {
+//     let getThis = () => {
+//       return this.title;
+//     };
+//     return getThis();
+//   }
+// };
+//
+// console.log(book1.getSummary1());
+// console.log(book1.getSummary2());
+// console.log(book1.getSummary3());
+// console.log(book1.getSummary4());
