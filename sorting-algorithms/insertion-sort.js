@@ -4,15 +4,15 @@ let counter = 0;
 const sortArr = (arr) => {
   let stopIteration = true;
   while (stopIteration) {
-    let isSorted = true;
+    let isNotSorted = true;
     for (let i = 0; i < arr.length; i++) {
       for (let j = i - 1; j >= 0 && arr[j] > arr[i]; j--) {
         counter++;
         [arr[i], arr[j]] = [arr[j], arr[i]];
-        isSorted = false;
+        isNotSorted = false;
       }
     }
-    if (isSorted) {
+    if (isNotSorted) {
       stopIteration = false;
     }
   }
